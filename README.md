@@ -101,9 +101,10 @@ The models were evaluated using the following metrics:
 ### **Key Results**
 
 #### **1. Pruning Time and Resource Usage**
+![image](https://github.com/user-attachments/assets/c073f29a-7bbb-46b2-ac77-9eb1094a34b0)
 - The Phi-2 model required **4 minutes** and **9.7 GB** of GPU RAM for each pruning operation.
 - The Phi-3 Mini model required significantly more time (**17 minutes**) and GPU memory (**19.7 GB**).
-  ![image](https://github.com/user-attachments/assets/c073f29a-7bbb-46b2-ac77-9eb1094a34b0)
+
 
 
 #### **2. Perplexity Analysis**
