@@ -93,13 +93,59 @@ python test.py --dataset /path/to/dataset --model /path/to/pruned_model/
 ## **Results**
 
 ### **Performance Metrics**
-- **Perplexity:** Evaluates model confidence on WikiText-2.
-- **Accuracy and F1 Scores:** Measures reasoning task performance on five datasets.
+The models were evaluated using the following metrics:
+- **Perplexity:** Measures model confidence, with lower values indicating higher confidence.
+- **Accuracy:** Proportion of correct predictions made by the model.
+- **F1 Score:** Harmonic mean of precision and recall, providing a balanced measure of performance.
 
-### **Key Observations**
-- Phi-2 exhibited lower perplexity and higher confidence compared to Phi-3 Mini.
-- Structured pruning (2:4) caused greater performance degradation than unstructured pruning.
+### **Key Results**
 
+#### **1. Pruning Time and Resource Usage**
+- The Phi-2 model required **4 minutes** and **9.7 GB** of GPU RAM for each pruning operation.
+- The Phi-3 Mini model required significantly more time (**17 minutes**) and GPU memory (**19.7 GB**).
+  ![image](https://github.com/user-attachments/assets/c073f29a-7bbb-46b2-ac77-9eb1094a34b0)
+
+
+#### **2. Perplexity Analysis**
+![image](https://github.com/user-attachments/assets/ea02a16b-8642-4265-9eb9-95b796f19018)
+
+- **Baseline Perplexity:** 
+  - Phi-2: **9.71** (more confident)
+  - Phi-3 Mini: **92.27**
+- **Effect of Sparsity on Perplexity:**
+  - At 20% sparsity, Phi-2 perplexity increased slightly to **10.08**, while Phi-3 Mini rose to **99.31**.
+  - At 80% sparsity, perplexity skyrocketed for both models, indicating severe degradation (Phi-2: **130250**, Phi-3 Mini: **367495**).
+- **Structured Pruning (2:4):**
+  - Phi-2: **29.48**
+  - Phi-3 Mini: **160.13**
+
+#### **3. Zero-shot Evaluations**
+**Commonsense Reasoning (CommonsenseQA, CosmosQA):**
+- Phi-2 consistently outperformed Phi-3 Mini in CommonsenseQA, maintaining better accuracy and F1 scores across sparsity levels.
+- CosmosQA showed a slight improvement at lower sparsity levels for both models, but performance degraded significantly at higher sparsity.
+
+**Logical Reasoning (LogiQA, ReClor):**
+- Both models experienced slight declines in accuracy and F1 scores as sparsity increased.
+- Phi-3 Mini demonstrated slightly better resilience in structured pruning, particularly on ReClor.
+
+**Analogical Reasoning (E-KAR):**
+- Surprisingly, both models showed improved performance at lower sparsity levels (20%-40%) before degrading significantly at 60%-80% sparsity.
+- Phi-3 Mini achieved higher baseline and pruned scores than Phi-2.
+
+#### **4. Structured vs. Unstructured Pruning**
+- **Structured Pruning (2:4):**
+  - Commonsense tasks saw a significant drop in accuracy and F1 scores.
+  - Logical tasks showed better resilience in Phi-3 Mini compared to Phi-2.
+- **Unstructured Pruning:**
+  - Phi-2 maintained lower perplexity and performed better at higher sparsity levels in Commonsense tasks.
+  - Phi-3 Mini was more robust in Analogical reasoning tasks.
+
+### **Visual Summary**
+Below is an example of the key trends observed during evaluations:
+- Accuracy and F1 scores gradually decline as sparsity increases, with Commonsense tasks being the most impacted.
+- Analogical reasoning showed temporary improvement at mid-level sparsity ratios.
+
+For more detailed figures, refer to the `Results - Visualisations/` directory.
 ---
 
 ## **Dataset Details**
