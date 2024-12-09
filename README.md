@@ -1,7 +1,7 @@
 
-# **Pruning for Performance: Evaluating the Impact of Model Reduction on Reasoning Abilities**
+# **Pruning for Performance: Evaluating the Impact of Model Reduction on Reasoning Abilities using wanda**
 
-This repository contains the code and resources for the dissertation project titled **"Pruning for Performance: Evaluating the Impact of Model Reduction on the Reasoning Abilities of Phi-2 and Phi-3 Mini"**. The research focuses on the impact of structured and unstructured pruning on reasoning capabilities in Microsoft Phi-2 and Phi-3 Mini Large Language Models (LLMs).
+This repository contains the code and resources for the dissertation project titled **"Pruning for Performance: Evaluating the Impact of Model Reduction on the Reasoning Abilities of Phi-2 and Phi-3 Mini using wanda"**. The research focuses on the impact of structured and unstructured pruning on reasoning capabilities in Microsoft Phi-2 and Phi-3 Mini Large Language Models (LLMs).
 
 ---
 
