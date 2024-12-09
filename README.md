@@ -121,19 +121,36 @@ The models were evaluated using the following metrics:
   - Phi-3 Mini: **160.13**
 
 #### **3. Zero-shot Evaluations**
+
 **Commonsense Reasoning (CommonsenseQA, CosmosQA):**
+
+![image](https://github.com/user-attachments/assets/e3acb6bd-aa01-4771-a9b8-f1067d88e577)
+
 - Phi-2 consistently outperformed Phi-3 Mini in CommonsenseQA, maintaining better accuracy and F1 scores across sparsity levels.
+
+![image](https://github.com/user-attachments/assets/7690756c-7086-47d2-8102-29b02866262f)
+
 - CosmosQA showed a slight improvement at lower sparsity levels for both models, but performance degraded significantly at higher sparsity.
 
 **Logical Reasoning (LogiQA, ReClor):**
+
+![image](https://github.com/user-attachments/assets/db4c1361-b51f-426e-a576-3b2fe2fa0458)
+![image](https://github.com/user-attachments/assets/c48d3dcc-4144-40a1-a851-a74faa505080)
+
 - Both models experienced slight declines in accuracy and F1 scores as sparsity increased.
 - Phi-3 Mini demonstrated slightly better resilience in structured pruning, particularly on ReClor.
 
 **Analogical Reasoning (E-KAR):**
+
+![image](https://github.com/user-attachments/assets/56676180-1697-4fe5-a3a2-c9bd658fe9ba)
+
 - Surprisingly, both models showed improved performance at lower sparsity levels (20%-40%) before degrading significantly at 60%-80% sparsity.
 - Phi-3 Mini achieved higher baseline and pruned scores than Phi-2.
 
 #### **4. Structured vs. Unstructured Pruning**
+
+![image](https://github.com/user-attachments/assets/264c3c10-e03c-4720-b0cd-627e94f90811)
+
 - **Structured Pruning (2:4):**
   - Commonsense tasks saw a significant drop in accuracy and F1 scores.
   - Logical tasks showed better resilience in Phi-3 Mini compared to Phi-2.
